@@ -51,7 +51,7 @@
 #endif
 
 #define APP_NAME L"DaBa"
-#define APP_VER  L"0.0.1"
+#define APP_VER  L"0.0.2"
 #define WM_MPV_WAKEUP (WM_APP + 1)
 #define TIMER_UI 1
 

@@ -7,6 +7,13 @@ UI는 팟플레이어 스타일의 다크 테마(커스텀 타이틀바·컨트�
 ## 실행
 `bin\DaBa.exe` 실행 (같은 폴더에 `libmpv-2.dll` 필요). 파일을 창에 끌어다 놓거나, exe에 파일을 드래그하거나, `연결 프로그램`으로 지정해서 쓰면 됩니다.
 
+## 설치 및 제거 (관리자 권한)
+- `install.bat` 실행 후 UAC 관리자 권한 요청을 승인하면 `%ProgramFiles%\DaBa`에 모든 사용자용으로 설치합니다. 시작 메뉴 바로가기와 Windows **설정 → 앱 → 설치된 앱** 항목이 등록됩니다.
+- 제거는 Windows의 설치된 앱에서 **DaBa → 제거**, 또는 `uninstall.bat`을 실행합니다. 제거할 때도 관리자 권한을 요청하며, 설치된 플레이어가 실행 중이면 먼저 종료해야 합니다.
+- `DaBa.ini`, `watch_later` 및 `%APPDATA%\DaBa`의 개인 설정·재생 기록은 보존합니다. 설치 폴더에 추가한 다른 파일도 삭제하지 않습니다.
+- 저장소에서는 빌드 후 루트의 `install.bat`을 실행합니다. 배포 시 `bin` 폴더의 `DaBa.exe`, `libmpv-2.dll`, `setup.ps1`, `install.bat`, `uninstall.bat`을 함께 제공합니다. 기존 ZIP에는 설치 스크립트가 포함되어 있지 않으므로 새로 압축해야 합니다.
+- 명령줄: `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1 -Mode Install` (`Uninstall`로 제거). 일반 플레이어 실행에는 관리자 권한이 필요하지 않습니다.
+
 ## 폴더 구성
 | 경로 | 내용 |
 |---|---|

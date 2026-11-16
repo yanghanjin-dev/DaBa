@@ -29,8 +29,11 @@ goto done
 echo [MinGW] building...
 windres src/daba.rc -O coff -o build/daba.res.o || exit /b 1
 gcc -O2 -std=c11 -municode -mwindows -Isrc src/daba.c build/daba.res.o -o bin/DaBa.exe ^
-    -lgdi32 -luser32 -lshell32 -lole32 -luuid -ldwmapi -luxtheme -lshlwapi -lgdiplus -s || exit /b 1
+    -lgdi32 -luser32 -lshell32 -lole32 -luuid -ldwmapi -luxtheme -lshlwapi -lgdiplus -ladvapi32 -s || exit /b 1
 
 :done
+copy /y setup.ps1 bin\setup.ps1 >nul || exit /b 1
+copy /y install.bat bin\install.bat >nul || exit /b 1
+copy /y uninstall.bat bin\uninstall.bat >nul || exit /b 1
 if not exist bin\libmpv-2.dll echo [NOTE] Put libmpv-2.dll next to bin\DaBa.exe before running.
 echo OK: bin\DaBa.exe
